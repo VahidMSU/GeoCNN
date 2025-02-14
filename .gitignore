@@ -1,0 +1,17 @@
+**/.venv
+**/*.gif
+**/*.npy
+**/*.png
+**/*.pth
+**/*.pdf
+**/*.sqlite
+**/*.csv
+**/*.jpg
+**/*.jpeg
+**/*.zip
+**/*.tar.gz
+**/*.tar
+**/runs/
+**/Job_schedualer/
+**/books/
+**/ml_data/
