@@ -26,7 +26,7 @@ def args_generator() -> List[Dict]:
         "dropout": [0.40],
         "gpu_index": ["1,3"],
         "accumulation_steps": [1],
-        "model":['VisionTransformerForRegression'],
+        "model":['CNNTransformerRegressor_v8'],
         "batch_size": [24],
         "num_training_epochs": [1000],
         "early_stopping_patience": [50],
