@@ -321,25 +321,10 @@ black GeoCNN/
 isort GeoCNN/
 ```
 
-## 📚 Citation
-
-If you use GeoCNN in your research, please cite:
-
-```bibtex
-@article{geocnn2024,
-  title={GeoCNN: Deep Learning Framework for High-Resolution Spatiotemporal Hydrological Modeling},
-  author={[Author Names]},
-  journal={[Journal Name]},
-  year={2024},
-  volume={[Volume]},
-  pages={[Pages]},
-  doi={[DOI]}
-}
-```
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the GNU GENERAL PUBLIC LICENSE - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
