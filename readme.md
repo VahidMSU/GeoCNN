@@ -1,5 +1,8 @@
 # Vision System Software
-The Vision System is a comprehensive framework for hydrological modeling and prediction, leveraging two key datasets: **SWATCentral.h5** and **HydroGeoDataset.h5**. It provides advanced tools for deep learning applications tailored to hydrological simulations and data analysis.
+The GeoCNN is a deep learning framework for hydrological modeling and prediction, leveraging two key datasets: **SWATCentral.h5** and **HydroGeoDataset.h5**. It provides advanced tools for deep learning applications tailored to hydrological simulations and data analysis.
+
+## Model Performance Visualization
+![Target vs Predicted Results](CNNTransformerRegressor_v8_AdaBelief_SpatioTemporalLoss_CosineAnnealingHardRestarts_lr0.0001_wd0.0001_w11_w20.1_nh8_nl6_fe4_embs1024_bs36_bw64_dropout0.3__target_vs_predicted.gif)
 
 ### Key Components
 
@@ -34,39 +37,3 @@ The Vision System is a comprehensive framework for hydrological modeling and pre
      - Seasonal Losses (Winter, Fall, Spring, Summer)
 5. **Inference**
     A seperate class desinged for inferencing, predicting usin
-
-### Clean Modularization  
-The entire system is modularized for scalability, and ease of maintenance. The module has one controller, one pipline, trainer, prediction, inference, losses, registry, helpers, utils. 
-
-
-classDiagram
-    class CNNTransformerModel {
-        +encoder: Encoder
-        +transformer: TransformerLayer
-        +decoder: Decoder
-        +custom_loss_function()
-        +train()
-        +validate()
-    }
-    class Encoder {
-        +deformable_convolutions()
-        +sub_pixel_convolutions()
-        +squeeze_excitation_blocks()
-    }
-    class TransformerLayer {
-        +fourier_positional_encoding()
-        +multi_head_attention()
-    }
-    class Decoder {
-        +edge_preserving_filters()
-        +spatial_reconstruction()
-    }
-    class CustomLossFunction {
-        +quantile_weighted_mse()
-        +boundary_masking()
-        +seasonal_weighting()
-    }
-    CNNTransformerModel --> Encoder
-    CNNTransformerModel --> TransformerLayer
-    CNNTransformerModel --> Decoder
-    CNNTransformerModel --> CustomLossFunction
