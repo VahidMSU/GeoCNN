@@ -332,14 +332,6 @@ This project is licensed under the GNU GENERAL PUBLIC LICENSE - see the [LICENSE
 - Hydrological modeling insights from [relevant hydrology institutions]
 - Computational resources provided by [computing centers]
 
-## 📞 Contact
 
-For questions, issues, or collaboration opportunities:
-
-- **Issues**: [GitHub Issues](https://github.com/your-username/GeoCNN/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/your-username/GeoCNN/discussions)
-- **Email**: [your-email@institution.edu]
-
----
 
 **GeoCNN**: Advancing the frontier of deep learning for environmental modeling 🌍💧
