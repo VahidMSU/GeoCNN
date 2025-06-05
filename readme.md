@@ -4,7 +4,7 @@
 [![Python](https://img.shields.io/badge/python-3.8+-green.svg)](https://python.org)
 [![PyTorch](https://img.shields.io/badge/pytorch-1.10+-orange.svg)](https://pytorch.org)
 
-GeoCNN is an advanced deep learning framework for geospatial and temporal modeling, purpose-built for environmental and hydrological prediction. The architecture leverages hybrid Convolutional Neural Network (CNN) and Transformer models to achieve high-resolution, four-dimensional (4D) spatiotemporal forecasting—demonstrated at scale for evapotranspiration and groundwater recharge prediction.
+GeoCNN is an advanced deep learning framework for 4D spatiotemporal modeling, purpose-built for environmental and hydrological prediction. The architecture leverages hybrid Convolutional Neural Network (CNN) and Transformer models to achieve high-resolution, four-dimensional (4D) spatiotemporal forecasting—demonstrated at scale for evapotranspiration and groundwater recharge prediction.
 
 ## 🎯 Key Features
 
@@ -57,19 +57,12 @@ GeoCNN is an advanced deep learning framework for geospatial and temporal modeli
 
 1. **Clone the repository**:
 ```bash
-git clone https://github.com/your-username/GeoCNN.git
+git clone https://github.com/VAHIDMSU/GeoCNN.git
 cd GeoCNN
 ```
 
-2. **Create a virtual environment**:
-```bash
-python -m venv geocnn_env
-source geocnn_env/bin/activate  # Linux/Mac
-# or
-geocnn_env\Scripts\activate  # Windows
-```
 
-3. **Install dependencies**:
+2. **Install dependencies**:
 ```bash
 pip install -r requirements.txt
 ```
@@ -89,7 +82,7 @@ torchsummary>=1.5.0
 
 ## 📊 Data Requirements
 
-GeoCNN supports the following dataset formats:
+GeoCNN has the following dataset formats:
 
 ### HydroGeoDataset Format
 ```
@@ -112,7 +105,7 @@ SWATCentral.h5
 └── ...
 ```
 
-**Note**: Due to size constraints, datasets are not included in this repository. Contact the authors for access or prepare your own data in the compatible HDF5 format.
+**Note**: Due to size constraints, datasets are not included in this repository. Contact the me for access or prepare your own data in the compatible HDF5 format.
 
 ## 🎮 Usage
 
@@ -164,22 +157,6 @@ predictions = inference.predict(dynamic_data, static_data, categorical_data)
 nse, mse, rmse = inference.evaluate(predictions, targets)
 ```
 
-### Custom Model Development
-
-Extend the framework with your own models:
-
-```python
-from GeoCNN.registry import register_model
-
-@register_model("MyCustomModel")
-def my_custom_model(config, device):
-    from your_models import CustomModel
-    return CustomModel(
-        num_channels=config['num_channels'],
-        embed_dim=config['embed_dim'],
-        # ... other parameters
-    ).to(device)
-```
 
 ## 🏗️ Model Architecture
 
@@ -201,13 +178,6 @@ The flagship model combines:
   - Sub-pixel convolution for upsampling
   - Feature fusion with skip connections
   - Deformable convolutions for adaptive receptive fields
-
-### Alternative Models
-
-- **CNNTransformerRegressor_v11**: Separate static/dynamic processing
-- **CNNTransformerRegressor_v12**: Enhanced layer normalization
-- **VisionTransformerForRegression**: Pure transformer architecture
-- **MultiScaleXception**: Multi-scale feature extraction
 
 ## 📊 Evaluation Metrics
 
@@ -288,14 +258,12 @@ Easily extensible framework for adding new components:
 ### Typical Performance on HydroGeoDataset
 - **NSE**: 0.75-0.85 (basin-averaged)
 - **RMSE**: 15-25 mm/year (depending on target variable)
-- **Training Time**: 2-4 hours on RTX 4090 (24GB)
-- **Inference Speed**: ~100 samples/second
+- **Training Time**: 1-2 hours on single L40S
 
 ### Scalability
 - **Dataset Size**: Tested up to 100GB+ HDF5 files
-- **Spatial Resolution**: 250m-30m pixels
+- **Spatial Resolution**: 250m or 30m pixels
 - **Temporal Resolution**: Daily to annual predictions
-- **Multi-GPU**: Scales to 4+ GPUs efficiently
 
 ## 🤝 Contributing
 
@@ -307,31 +275,6 @@ We welcome contributions! Please follow these guidelines:
 4. **Update documentation** as needed
 5. **Submit a pull request** with a clear description
 
-### Development Setup
-
-```bash
-# Install development dependencies
-pip install -r requirements-dev.txt
-
-# Run tests
-python -m pytest tests/
-
-# Format code
-black GeoCNN/
-isort GeoCNN/
-```
-
-
 ## 📄 License
 
-This project is licensed under the GNU GENERAL PUBLIC LICENSE - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- Built with PyTorch and the open-source deep learning community
-- Hydrological modeling insights from [relevant hydrology institutions]
-- Computational resources provided by [computing centers]
-
-
-
-**GeoCNN**: Advancing the frontier of deep learning for environmental modeling 🌍💧
+Read the [LICENSE](LICENSE) file for details.
